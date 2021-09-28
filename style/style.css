@@ -1,0 +1,119 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#hoverCurtain {
+  padding: 30px 60px;
+  border: solid 4px #272727;
+  font-size: 2rem;
+  font-family: Helvetica;
+  position: relative;
+  text-decoration: none;
+  color: #272727;
+  overflow: hidden;
+}
+
+#hoverCurtain::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+
+#hoverCurtain:hover::before {
+  transform: rotate(0deg);
+}
+
+#hoverTranslate {
+  padding: 30px 60px;
+  border: solid 4px #272727;
+  font-size: 2rem;
+  font-family: Helvetica;
+  position: relative;
+  text-decoration: none;
+  color: #272727;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+#hoverTranslate::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+#hoverTranslate:hover::before {
+  transform: translate(0);
+}
+
+#hoverTranslate:hover {
+  color: #eee;
+}
+
+#hoverCross {
+  padding: 30px 60px;
+  border: solid 4px #272727;
+  font-size: 2rem;
+  font-family: Helvetica;
+  position: relative;
+  text-decoration: none;
+  color: #272727;
+  transition: 1s;
+}
+
+#hoverCross::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  transition: 1s;
+  transform: rotateX(90deg);
+  z-index: -1;
+}
+
+#hoverCross::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  transition: 1s;
+  transform: rotateY(90deg);
+  z-index: -1;
+}
+
+#hoverCross:hover::before {
+  transform: rotateX(0);
+}
+
+#hoverCross:hover::after {
+  transform: rotateY(0);
+}
+
+#hoverCross:hover {
+  color: white;
+}
