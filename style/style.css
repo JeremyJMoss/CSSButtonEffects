@@ -7,6 +7,7 @@ body {
   gap: 20px;
 }
 
+/*rotating button effect*/
 #hoverCurtain {
   padding: 30px 60px;
   border: solid 4px #272727;
@@ -36,6 +37,7 @@ body {
   transform: rotate(0deg);
 }
 
+/*swiping button effect*/
 #hoverTranslate {
   padding: 30px 60px;
   border: solid 4px #272727;
@@ -69,6 +71,7 @@ body {
   color: #eee;
 }
 
+/*cross button effect*/
 #hoverCross {
   padding: 30px 60px;
   border: solid 4px #272727;
@@ -116,4 +119,54 @@ body {
 
 #hoverCross:hover {
   color: white;
+}
+
+/*stretching button effect*/
+#hoverStretch {
+  text-decoration: none;
+  padding: 30px 60px;
+  color: #e1332d;
+  border: 4px solid #e1332d;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  transition: all 0.5s;
+}
+
+#hoverStretch:hover {
+  font-weight: 900;
+  letter-spacing: 8px;
+  border: 7px solid #e1332d;
+}
+
+/*top to bottom swipe effect*/
+#hoverSwipe {
+  text-decoration: none;
+  padding: 30px 60px;
+  color: #272727;
+  font-size: 2rem;
+  border: 4px solid #272727;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+#hoverSwipe::before {
+  content: "YEAH!";
+  background-color: #e1332d;
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+
+#hoverSwipe:hover::before {
+  transform: translateY(0);
 }
